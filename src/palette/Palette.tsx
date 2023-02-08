@@ -10,7 +10,7 @@ export function Palette({ colorPalette }: PaletteProps) {
   return (
     <S.Container>
       {colorPalette.map((color, i) => (
-        <ColorBox key={i} color={color.hex} />
+        <ColorBox key={i} color={color} />
       ))}
     </S.Container>
   );

@@ -10,7 +10,6 @@ export const findComplementary = (hex: string): ColorFormatType[] => {
 
   for (let i = -2; i <= 2; i++) {
     const hue = (colorFormat.hsl.h + i * 60 + 360) % 360;
-    console.log(colorFormat.hsl.h, " ", hue);
     const newColorHsl = {
       h: hue,
       s: colorFormat.hsl.s,
