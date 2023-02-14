@@ -1,19 +1,21 @@
 import { calculateColorFormat } from "../calculateColorFormat";
 import { hexToRGB } from "../color-conversion/hexToRgb";
 import { hslToHex } from "../color-conversion/hslToHex";
-import { ColorFormatType } from "../types";
+import { offsetColor } from "../offsetColor";
+import { ColorFormatType, HslType } from "../types";
 
-export const findComplementary = (hex: string): ColorFormatType[] => {
-  const colorFormat = calculateColorFormat(hex);
+export function findComplementary(hex: string): ColorFormatType[] {
+  const colorFormat: ColorFormatType = calculateColorFormat(hex);
+  const baseColor: HslType = offsetColor(colorFormat);
 
   const palette: ColorFormatType[] = [];
 
   for (let i = -2; i <= 2; i++) {
-    const hue = (colorFormat.hsl.h + i * 60 + 360) % 360;
+    const hue = (baseColor.h + i * 60 + 360) % 360;
     const newColorHsl = {
       h: hue,
-      s: colorFormat.hsl.s,
-      l: colorFormat.hsl.l,
+      s: baseColor.s,
+      l: baseColor.l,
     };
 
     const newFormattedColor = {
@@ -26,4 +28,4 @@ export const findComplementary = (hex: string): ColorFormatType[] => {
   }
 
   return palette;
-};
+}

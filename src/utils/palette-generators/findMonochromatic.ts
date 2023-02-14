@@ -3,7 +3,7 @@ import { hexToRGB } from "../color-conversion/hexToRgb";
 import { hslToHex } from "../color-conversion/hslToHex";
 import { ColorFormatType } from "../types";
 
-export const findMonochromatic = (hex: string): ColorFormatType[] => {
+export function findMonochromatic(hex: string): ColorFormatType[] {
   const colorFormat = calculateColorFormat(hex);
   const offsetWhite = colorFormat.hsl.l > 80 ? 80 : colorFormat.hsl.l;
   const palette: ColorFormatType[] = [];
@@ -26,4 +26,4 @@ export const findMonochromatic = (hex: string): ColorFormatType[] => {
   }
 
   return palette;
-};
+}

@@ -1,21 +1,25 @@
 import { calculateColorFormat } from "../calculateColorFormat";
 import { hexToRGB } from "../color-conversion/hexToRgb";
 import { hslToHex } from "../color-conversion/hslToHex";
-import { ColorFormatType } from "../types";
+import { offsetColor } from "../offsetColor";
+import { ColorFormatType, HslType } from "../types";
 
-export const findTriadic = (hex: string): ColorFormatType[] => {
-  const colorFormat = calculateColorFormat(hex);
+export function findTriadic(hex: string): ColorFormatType[] {
+  const colorFormat: ColorFormatType = calculateColorFormat(hex);
+  const baseColor: HslType = offsetColor(colorFormat);
 
   const palette: ColorFormatType[] = [];
 
   for (let i = -2; i <= 2; i++) {
-    const hue = (colorFormat.hsl.h + i * 120 + 360) % 360;
+    const hue = (baseColor.h + i * 120 + 360) % 360;
     const lightness =
-      i < 0 ? colorFormat.hsl.l + (4 - i) * 5 : colorFormat.hsl.l;
+      i < 0
+        ? Math.round(baseColor.l + (4 - i) * (4 - baseColor.l / 25))
+        : baseColor.l;
 
     const newColorHsl = {
       h: hue,
-      s: colorFormat.hsl.s,
+      s: baseColor.s,
       l: lightness,
     };
 
@@ -29,4 +33,4 @@ export const findTriadic = (hex: string): ColorFormatType[] => {
   }
 
   return palette;
-};
+}
