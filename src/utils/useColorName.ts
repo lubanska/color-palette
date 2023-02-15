@@ -14,12 +14,18 @@ export function useColorName(hex: string): string {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(
-        `${endpoint}id?hex=${hex}&format=json`,
-        options
-      );
-      const jsonData = await response.json();
-      setData(jsonData);
+      try {
+        const response = await fetch(
+          `${endpoint}id?hex=${hex}&format=json`,
+          options
+        );
+        const jsonData = await response.json();
+
+        setData(jsonData);
+      } catch (e) {
+        console.log(e);
+        setData(null);
+      }
     };
 
     fetchData();
