@@ -15,3 +15,8 @@ export interface ColorFormatType {
   rgb: RgbType;
   hsl: HslType;
 }
+
+export enum StyleVariantEnum {
+  Primary = "primary",
+  Secondary = "secondary",
+}

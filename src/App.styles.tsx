@@ -5,6 +5,7 @@ export const Picker = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 2rem;
   margin: 2.5rem;
 `;
 
@@ -13,6 +14,5 @@ export const ButtonContainer = styled.div`
   flex-wrap: wrap;
   align-content: center;
   justify-content: center;
-  margin: 2.5rem;
   gap: 0.5rem;
 `;
