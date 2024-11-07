@@ -3,17 +3,13 @@ import ARadioItem from "@/components/atoms/ARadioItem.vue";
 </script>
 
 <template>
-  <div class="flex flex-row">
-    <ARadioItem radioId="analogous" label="Select analogous">
-      Analogous
-    </ARadioItem>
-    <ARadioItem radioId="monochromatic" label="Select monochromatic">
-      Monochromatic
-    </ARadioItem>
-    <ARadioItem radioId="complementary" label="Select complementary">
-      Complementary
-    </ARadioItem>
-    <ARadioItem radioId="triadic" label="Select triadic">Triadic</ARadioItem>
+  <div
+    role="radio-group"
+    class="box-border flex flex-row gap-2 flex-wrap md:flex-nowrap">
+    <ARadioItem label="Analogous" group="color" />
+    <ARadioItem label="Monochromatic" group="color" />
+    <ARadioItem label="Complementary" group="color" />
+    <ARadioItem label="Triadic" group="color" />
   </div>
 </template>
 

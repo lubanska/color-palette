@@ -4,14 +4,16 @@ import OColorPalette from "./components/organisms/OColorPalette.vue";
 </script>
 
 <template>
-  <header><ONavigation /></header>
+  <header>
+    <ONavigation />
+  </header>
 
   <main>
     <OColorPalette />
   </main>
 
-  <footer>
+  <!-- <footer>
     Created with ♡ by
     <ALink to="https://lubanska.dev">Agata</ALink>
-  </footer>
+  </footer> -->
 </template>
