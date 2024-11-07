@@ -17,10 +17,10 @@ export interface ColorFormatType {
 }
 
 export enum GenerateMethod {
-  MONOCHROME = "monochrome",
-  COMPLEMENT = "complement",
-  ANALOGOUS = "analogous",
-  TRIAD = "triad",
+  MONOCHROMATIC = "Monochromatic",
+  COMPLEMENTARY = "Complementary",
+  ANALOGOUS = "Analogous",
+  TRIADIC = "Triadic",
 }
 
 export interface ColorApiResponse {

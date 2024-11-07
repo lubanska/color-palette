@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { ColorFormatType } from "@/types/colorTypes";
-import { useCheckBrightness } from "@/composables/useCheckBrightness";
+import { checkBrightness } from "@/utils/checkBrightness";
 import { useNameApi } from "@/composables/useNameApi";
 import { computed } from "vue";
 
@@ -11,7 +11,7 @@ interface Props {
 const props = defineProps<Props>();
 const { data } = useNameApi(props.colorObject.hex.slice(1));
 
-const isBright = computed(() => useCheckBrightness(props.colorObject.rgb));
+const isBright = computed(() => checkBrightness(props.colorObject.rgb));
 </script>
 
 <template>
@@ -20,21 +20,21 @@ const isBright = computed(() => useCheckBrightness(props.colorObject.rgb));
     :style="{ backgroundColor: colorObject.hex }">
     <div
       :class="[
-        'm-2 flex gap-2 md:mb-4 md:text-center md:block md:w-full',
+        'm-2 flex gap-2 flex-wrap md:mb-4 md:text-center md:flex-col',
         {
           'text-gray-900': isBright,
           'text-gray-100': !isBright,
         },
       ]">
       <Transition name="fade">
-        <p v-if="data">{{ data.name.value }}</p>
+        <p v-if="data" class="whitespace-nowrap">{{ data.name.value }}</p>
       </Transition>
       <p class="font-800 md:text-8">{{ colorObject.hex }}</p>
-      <p>
+      <p class="hidden md:block">
         rgb({{ colorObject.rgb.r }}, {{ colorObject.rgb.g }},
         {{ colorObject.rgb.b }})
       </p>
-      <p>
+      <p class="hidden md:block">
         hsl({{ colorObject.hsl.h }}, {{ colorObject.hsl.s }}%,
         {{ colorObject.hsl.l }}%)
       </p>

@@ -1,15 +1,16 @@
 <script setup lang="ts">
 import ARadioItem from "@/components/atoms/ARadioItem.vue";
+import { GenerateMethod } from "@/types/colorTypes";
 </script>
 
 <template>
   <div
-    role="radio-group"
+    role="radiogroup"
     class="box-border flex flex-row gap-2 flex-wrap md:flex-nowrap">
-    <ARadioItem label="Analogous" group="color" />
-    <ARadioItem label="Monochromatic" group="color" />
-    <ARadioItem label="Complementary" group="color" />
-    <ARadioItem label="Triadic" group="color" />
+    <ARadioItem :label="GenerateMethod.ANALOGOUS" group="color" />
+    <ARadioItem :label="GenerateMethod.MONOCHROMATIC" group="color" />
+    <ARadioItem :label="GenerateMethod.COMPLEMENTARY" group="color" />
+    <ARadioItem :label="GenerateMethod.TRIADIC" group="color" />
   </div>
 </template>
 

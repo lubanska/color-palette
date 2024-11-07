@@ -1,6 +1,6 @@
 import type { RgbType } from "@/types/colorTypes";
 
-export const useCheckBrightness = (rgb: RgbType) => {
+export const checkBrightness = (rgb: RgbType) => {
   // Normalize RGB values
   let r = rgb.r / 255;
   let g = rgb.g / 255;

@@ -1,24 +1,22 @@
-# 😌 Breathe - A Minimalist Mindfulness App
+# 🎨 Color Palette - Generate Harmonious Color Palettes
 
 ## Description
 
-Breathe is a simple, thoughtfully crafted mindfulness app inspired by tools like Headspace. I created this project as a sandbox for exploring the potential of web technologies with a focus on minimalism and performance. Setting a challenge for myself, I built the entire app using only vanilla TypeScript, leveraging Web Components and the Web Animations API to see just how powerful a lightweight, library-free approach can be.
+Color Palette is a tool for generating harmonious color palettes, born from a passion for blending development and design. Created as a study in color palettes, color generation, and transformations, this project allows users to pick a base color and a generation method to explore visually balanced combinations. Perfect for designers, developers, and creatives, Color Palette simplifies finding the ideal color harmony for any project.
 
-[Live Demo](https://breathe-vert.vercel.app/)
+[Live Demo](https://color-palette-lake.vercel.app)
 
 ### Key Features
 
-- **100% Lighthouse Scores** – The app achieves top marks in all Lighthouse categories, emphasizing accessibility, performance, best practices, and SEO.
-- **High Accessibility** – Designed with accessibility in mind to ensure a seamless experience for all users.
-- **Pure Vanilla JavaScript** – No external libraries or frameworks; everything is built from scratch.
 - **Fully Typed** – TypeScript implemented from day one for the error-free codebase.
+- **Color Calculation** – Generate harmonious color palettes using various color theories (analogous, complementary, triadic, etc.).
+- **Customizable Options** – Select a base color and generation method to create palettes tailored to your design needs.
 
 ## Technologies Used
 
-- **Astro** – Fast, content-first web framework for static sites.
 - **TypeScript** – Fully typed to catch errors early and improve maintainability.
 - **UnoCSS** – Atomic-CSS framework for lightweight, customizable styling.
-- **Web Components & Web Animations API** – Explores reusable, custom components and fluid animations without dependencies.
+- **VueJS** – Reactive front-end framework to build a dynamic and interactive user interface.
 
 ## Installation
 
@@ -26,10 +24,10 @@ Instructions on how to set up the project locally. For example:
 
 ```bash
 # Clone the repository
-git clone https://github.com/lubanska/breathe.git
+git clone https://github.com/lubanska/color-palette.git
 
 # Change to the project directory
-cd breathe
+cd color-palette
 
 # Install dependencies
 npm install

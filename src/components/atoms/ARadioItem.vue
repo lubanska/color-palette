@@ -1,10 +1,20 @@
 <script setup lang="ts">
+import { useColorManager } from "@/composables/useColorManager";
+import type { GenerateMethod } from "@/types/colorTypes";
+
 interface Props {
   label: string;
   group: string;
 }
 
 defineProps<Props>();
+
+const { selectedMethod, setMethod } = useColorManager();
+
+const handleInput = (event: Event) => {
+  const target = event.target as HTMLInputElement;
+  setMethod(target.value as GenerateMethod);
+};
 </script>
 
 <template>
@@ -15,7 +25,9 @@ defineProps<Props>();
       :name="group"
       :value="label"
       :aria-labelledby="`${label}-label`"
-      class="radio__input" />
+      class="radio__input"
+      v-model="selectedMethod"
+      @input="handleInput" />
     <label
       :for="label"
       :aria-labelledby="`${label}-label`"
@@ -33,10 +45,10 @@ defineProps<Props>();
   }
 
   &__label {
-    @apply py-2 px-3 rounded-xl flex flex-row flex-nowrap gap-2 items-center transition-all duration-300 bg-none active:scale-105 cursor-pointer select-none h-full;
+    @apply py-2 px-3 rounded-xl flex flex-row flex-nowrap gap-2 items-center transition-all duration-300 bg-none active:scale-105 cursor-pointer select-none h-full outline-none;
 
     &:hover {
-      @apply bg-gray-300;
+      @apply bg-[--color-var];
 
       & .radio__circle {
         @apply border-gray-700;
@@ -62,6 +74,10 @@ defineProps<Props>();
     &:before {
       @apply bg-gray-700;
     }
+  }
+
+  & input[type="radio"]:focus-visible + .radio__label {
+    @apply outline-offset-1 outline-2 outline-gray-800;
   }
 }
 </style>
