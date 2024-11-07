@@ -16,6 +16,13 @@ export interface ColorFormatType {
   hsl: HslType;
 }
 
+export enum GenerateMethod {
+  MONOCHROME = "monochrome",
+  COMPLEMENT = "complement",
+  ANALOGOUS = "analogous",
+  TRIAD = "triad",
+}
+
 export interface ColorApiResponse {
   hex: {
     value: string;

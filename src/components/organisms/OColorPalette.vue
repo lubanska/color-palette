@@ -1,18 +1,14 @@
 <script setup lang="ts">
 import MColorBlock from "@/components/molecules/MColorBlock.vue";
-import type { ColorFormatType } from "@/types/colorTypes";
+import { useColorManager } from "@/composables/useColorManager";
 
-interface Props {
-  colorArray: ColorFormatType[];
-}
-
-defineProps<Props>();
+const { currentPalette } = useColorManager();
 </script>
 
 <template>
   <div class="h-full flex flex-col md:flex-row">
     <MColorBlock
-      v-for="color in colorArray"
+      v-for="color in currentPalette"
       :key="color.hex"
       :colorObject="color" />
   </div>

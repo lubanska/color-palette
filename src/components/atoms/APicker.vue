@@ -1,14 +1,28 @@
 <script setup lang="ts">
+import { useColorManager } from "@/composables/useColorManager";
+
 interface Props {
   label: string;
 }
 
 defineProps<Props>();
+
+const { selectedColor, setColor } = useColorManager();
+
+const handleInput = (event: Event) => {
+  const target = event.target as HTMLInputElement;
+  setColor(target.value);
+};
 </script>
 
 <template>
   <div class="picker">
-    <input type="color" :id="label" :name="label" value="#e66465" />
+    <input
+      type="color"
+      :id="label"
+      :name="label"
+      v-model="selectedColor"
+      @input="handleInput" />
     <label :for="label">{{ label }}</label>
   </div>
 </template>

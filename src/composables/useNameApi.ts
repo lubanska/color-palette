@@ -29,7 +29,6 @@ export function useNameApi(hex: string) {
       }
 
       data.value = await response.json();
-      console.log(data.value);
     } catch (err) {
       error.value = "Error fetching data";
     } finally {
