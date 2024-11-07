@@ -1,12 +1,20 @@
 <script setup lang="ts">
 import MColorBlock from "@/components/molecules/MColorBlock.vue";
+import type { ColorFormatType } from "@/types/colorTypes";
 
-const colorArray = ["#FF0000", "#00FF00", "#0000FF", "#00FF00", "#0000FF"];
+interface Props {
+  colorArray: ColorFormatType[];
+}
+
+defineProps<Props>();
 </script>
 
 <template>
-  <div class="h-100vh flex flex-col md:flex-row">
-    <MColorBlock v-for="color in colorArray" :key="color" :bgColor="color" />
+  <div class="h-full flex flex-col md:flex-row">
+    <MColorBlock
+      v-for="color in colorArray"
+      :key="color.hex"
+      :colorObject="color" />
   </div>
 </template>
 
