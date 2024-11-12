@@ -48,7 +48,7 @@ const handleInput = (event: Event) => {
     @apply py-2 px-3 rounded-xl flex flex-row flex-nowrap gap-2 items-center transition-all duration-300 bg-none active:scale-105 cursor-pointer select-none h-full outline-none;
 
     &:hover {
-      @apply bg-[--color-var];
+      @apply bg-[--color-highlight];
 
       & .radio__circle {
         @apply border-gray-700;

@@ -8,8 +8,12 @@ const { selectedColor } = useColorManager();
 
 onMounted(() => {
   document.documentElement.style.setProperty(
-    "--color-var",
+    "--color-highlight",
     selectedColor.value + "80"
+  );
+  document.documentElement.style.setProperty(
+    "--color-selected",
+    selectedColor.value
   );
 });
 </script>

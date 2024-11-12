@@ -13,8 +13,12 @@ export const useColorManager = () => {
   const setColor = (color: string) => {
     selectedColor.value = color;
     document.documentElement.style.setProperty(
-      "--color-var",
+      "--color-highlight",
       selectedColor.value + "80"
+    );
+    document.documentElement.style.setProperty(
+      "--color-selected",
+      selectedColor.value
     );
   };
 
