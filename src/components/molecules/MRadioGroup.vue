@@ -4,9 +4,7 @@ import { GenerateMethod } from "@/types/colorTypes";
 </script>
 
 <template>
-  <div
-    role="radiogroup"
-    class="box-border flex flex-row gap-2 flex-wrap md:flex-nowrap">
+  <div role="radiogroup" class="flex flex-col gap-2 lg:flex-row lg:flex-nowrap">
     <ARadioItem :label="GenerateMethod.ANALOGOUS" group="color" />
     <ARadioItem :label="GenerateMethod.MONOCHROMATIC" group="color" />
     <ARadioItem :label="GenerateMethod.COMPLEMENTARY" group="color" />

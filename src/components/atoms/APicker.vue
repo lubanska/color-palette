@@ -46,7 +46,7 @@ const handleInput = (event: Event) => {
   }
 
   &__box {
-    @apply w-10 h-5 rounded-xl bg-[--color-selected];
+    @apply w-5 h-5 min-w-5 min-h-5  rounded-xl bg-[--color-selected];
   }
 
   & input[type="color"]:focus-visible + .picker__label {

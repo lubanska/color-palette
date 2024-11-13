@@ -13,8 +13,8 @@ const handleClick = () => {
 
 <template>
   <div
-    class="border-gray-400 border-solid border-b-1 bg-gray-100 flex flex-row justify-between flex-wrap w-full p-3">
-    <div class="flex gap-2">
+    class="border-gray-400 border-solid border-b-1 bg-gray-100 flex flex-row justify-between flex-wrap gap-2 w-full p-3">
+    <div class="flex flex-col gap-2 lg:flex-row">
       <AButton icon="lightbulb-outline" @click="handleClick">Generate</AButton>
       <APicker label="Color picker" />
     </div>

@@ -61,7 +61,7 @@ const handleInput = (event: Event) => {
   }
 
   &__circle {
-    @apply w-5 h-5 border-1 border-gray-500 rounded-full relative transition-all duration-300;
+    @apply w-5 h-5 min-w-5 min-h-5 border-1 border-gray-500 rounded-full relative transition-all duration-300;
 
     &:before {
       @apply content-[''] rounded-full w-3 h-3 top-1/2 left-1/2 translate-x--1/2 translate-y--1/2 absolute transition-all duration-300;
